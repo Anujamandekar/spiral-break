@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#f5f1e8">
+  <title>Spiral Break</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app">
+
+    <!-- HOME -->
+    <section id="home" class="screen active">
+
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">SPIRAL BREAK</div>
+          <h1>Your garden</h1>
+        </div>
+
+        <button class="ghost-button" onclick="openLibrary()">
+          📖
+        </button>
+      </header>
+
+      <div class="garden-card">
+        <div id="gardenArt" class="garden-art">🌱</div>
+
+        <div>
+          <div id="gardenName" class="garden-name">
+            A beginning
+          </div>
+
+          <div id="gardenStats" class="muted">
+            0 loops redirected · 0 bugs
+          </div>
+        </div>
+      </div>
+
+      <button class="spiral-button" onclick="startSpiral()">
+        I'M LOOPING
+      </button>
+
+      <button class="parked-button" onclick="openParked()">
+        Parked thoughts
+        <span id="parkedCount">0</span>
+      </button>
+
+    </section>
+
+
+    <!-- MAIN APP SCREEN -->
+    <section id="mainScreen" class="screen">
+
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+
+      <div id="content"></div>
+
+    </section>
+
+
+    <!-- PARKED THOUGHTS -->
+    <section id="parkedScreen" class="screen">
+
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">THOUGHTS</div>
+          <h1>Parked thoughts</h1>
+        </div>
+
+        <button class="ghost-button" onclick="goHome()">
+          Back
+        </button>
+      </header>
+
+      <p class="muted">
+        These are thoughts you deliberately chose not to solve in the middle
+        of a loop.
+      </p>
+
+      <div id="parkedList"></div>
+
+    </section>
+
+
+    <!-- QUOTE LIBRARY -->
+    <section id="libraryScreen" class="screen">
+
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">READ</div>
+          <h1>My passages</h1>
+        </div>
+
+        <button class="ghost-button" onclick="goHome()">
+          Back
+        </button>
+      </header>
+
+      <p class="muted">
+        Save passages and quotes you love. After a successful interruption,
+        the app can offer you something to read.
+      </p>
+
+      <textarea
+        id="quoteText"
+        placeholder="Paste a quote or passage..."
+      ></textarea>
+
+      <input
+        id="quoteAuthor"
+        placeholder="Author"
+      >
+
+      <button class="secondary-button" onclick="addQuote()">
+        Add passage
+      </button>
+
+      <div id="quoteList"></div>
+
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
